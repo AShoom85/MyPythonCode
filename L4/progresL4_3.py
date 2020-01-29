@@ -9,3 +9,9 @@
 for i in range(5):
     n = i + 1
     print(str(n)*n)
+
+    
+for num in range(10):
+    for i in range(num):
+        print(num,end=" ")
+    print("\n")     

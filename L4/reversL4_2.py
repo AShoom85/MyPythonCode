@@ -13,3 +13,4 @@ lis = [i for i in range(4,-1,-1)]
 print(lis)
 lis.reverse()
 print(lis)
+

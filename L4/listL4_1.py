@@ -9,5 +9,5 @@
 lis = [3,6,9,12,15]
 for i in range(len(lis)):
     lis[i] = int(lis[i])*2
-    print("Element Index[ "+str(i)+" ] Previous Value "+str(lis[i])+"  Now "+str(int(lis[i])*2))
-  
+    print("Element Index[ "+str(i)+" ] Previous Value "+str(lis[i])+"  Now  "+str(int(lis[i])*2))
+#    print("Element Index[ ",i," ] Previous Value ",lis[i],"  Now  ", lis[i]*2)

@@ -13,4 +13,4 @@ lis = [[1,2],[3,4]]
 liss =[[k[i] for k in lis] for i in range(len(lis[0]))]
 print(lis[0],liss[0])
 print(lis[1],liss[1])
-
+ 

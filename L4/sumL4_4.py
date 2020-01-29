@@ -10,9 +10,10 @@
 # 13
 # 15
 # 17
-
-for i in range(10):
-    if i == 0:
-        print (i)
-    else:
-        print( i + (i-1))
+def pr(num):
+    for i in range(num):
+        if i == 0:
+            print (i)
+        else:
+            print( i + (i-1))
+pr(10)
