@@ -13,8 +13,9 @@
 #   a[4] = 'A'
 # TypeError: 'str' object does not support item assignment
 
+
 # Переписать программу так, чтобы она выводила
-# AbabAhalAlahA
+#            AbabAhalAlahA
 
 
 a = 'Ababahalamaha'
