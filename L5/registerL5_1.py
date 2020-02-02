@@ -26,5 +26,6 @@ b =[i for i in range(len(a)) if a[i] == "a"]
 d = [i for i in a]
 for i in range(0,len(b),2):
     d[b[i]] = d[b[i]].upper()    
-a = "".join(d)    
+a = "".join(d)
 print(a)
+
