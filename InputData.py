@@ -4,13 +4,12 @@ from operations import operations
 def inputData():
     s = list(input("Input  "))    
     functions = tuple("+-*/%")
-    numerals = tuple("0123456789")
     num = list()
     fun = list()
     text = list()
     
     for i in range(len(s)):
-        if s[i] in numerals:
+        if s[i].isdigit(): 
             if fun :
                 if len(num)== len(fun):
                     num.append(s[i])
@@ -28,5 +27,5 @@ def inputData():
         i += 1
         
     res = operations( num, fun )
-    print("resalt = " + str(res))
+    print("resalt =", res)
     

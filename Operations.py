@@ -13,4 +13,4 @@ def operations( num, fun ):
             elif fun[i] == "+":
                 num[0] = str(int(num[0]) + int(num[1]))
                 del(num[1])
-    return (num)
+    return (num[0])
