@@ -9,8 +9,6 @@ import pickle
 
 FILENAME = "contacts.dat"
 
-data = []
-
 choices = {'a':'Add contact', 'p': "Print Contacts", 'q': "Quit", 'h': "Help"}
 
 class Person:
@@ -76,26 +74,26 @@ def cHelp(e=''):
         """)
 
 def menu():
-    print(f"Contacts".title().center(30, '='), '\n')
-    choice = input("| Enter choice (" + ''.join(((i+'|') for i in choices.keys()))+"):")
+    print("\n",f" Contacts ".title().center(50, '='), '\n')
+    choice = input("              Enter choice (" + ''.join(((i+'|') for i in choices.keys()))+"):")
     
     return str(choice.lower()) if choice.lower() != '' else 'h'
 
 def printContacts():
     with open(FILENAME, "rb") as file:
-            try:
-                while True:
-                    data.append(pickle.load(file))
-            except EOFError:
-                pass
-            p = input("Do you want to see with contacts a private phones ? (y|n): ")
-            printP = ""
-            if p == "y" :
-                for contact in data:
-                    print(f"Имя: {contact['first_name']} {contact['last_name']} \tOffice phone: {contact['office']} \tAdded At: {contact['date']} :{contact['time']} \tPrivate: {contact['_Person__private']}")
-            else:
-                for contact in data:
-                    print(f"Имя: {contact['first_name']} {contact['last_name']} \tOffice phone: {contact['office']} \tAdded At: {contact['date']} :{contact['time']}")
+        data = []
+        try:
+            while True:
+                data.append(pickle.load(file))
+        except EOFError:
+            pass
+        p = input("\nDo you want to see with contacts a private phones ? (y|n): ")
+        if p == "y" :
+            for contact in data:
+                print(f"\nИмя: {contact['first_name']} {contact['last_name']} \tOffice phone: {contact['office']} \tAdded At: {contact['date']} :{contact['time']} \tPrivate: {contact['_Person__private']}")
+        else:
+            for contact in data:
+                print(f"\nИмя: {contact['first_name']} {contact['last_name']} \tOffice phone: {contact['office']} \tAdded At: {contact['date']} :{contact['time']}")
             
                 
 
@@ -105,7 +103,7 @@ while True:
     choice = menu()
 
     if choice == 'q':
-        print('{!s}'.format('Thank You for using contact!'))
+        print('{!s}'.format('\n             Thank You for using contact!'))
         break 
     
     if choice == 'h':
@@ -115,20 +113,21 @@ while True:
     if choice == 'p':
         printContacts()
         
+    
     if choice == 'a':
-        print("Add New Record To PhoneBook")
+        print("\nAdd New Record To PhoneBook")
 
-        first_name = input("First Name: ")
-        last_name = input("Last Name: ") 
-        office_phone = input("Office Phone Number: ")
+        first_name = input("\nFirst Name: ")
+        last_name = input("\nLast Name: ") 
+        office_phone = input("\nOffice Phone Number: ")
         
         person = Person(first_name, last_name)
         person.add_office_phone(office_phone)
         
-        private = input("Have a private phone? (y|n): ")
+        private = input("\nHave a private phone? (y|n): ")
 
         if (private == 'y'):
-            private_phone = input("Private Phone Number: ")
+            private_phone = input("n\Private Phone Number: ")
             person.add_private_phone(private_phone)
 
         person.save(person.__dict__, FILENAME)
