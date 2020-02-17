@@ -2,15 +2,15 @@ from tkinter import *
 from tkinter import messagebox
 
 def masbox():        
-    messagebox.showerror("Message!", "Do not touch this button!")
+    messagebox.showerror("Message!", "Don't touch this button!")
         
 master = Tk()
 master.title('MessageBox')
-Label(master, text = 'Push the button', font =('Verdana', 15)).pack(side = TOP, pady = 10) 
+Label(master, text = 'PUSH THE BUTTON', font =('Verdana', 15), fg= 'red').pack(side = TOP, pady = 10) 
 photo = PhotoImage(file = r"C:\Users\AShoom\Desktop\ShoomPython\CutCalcul_byPy\L10\image.png")
-Button(master, text= 'clik mi', fg= 'black', font= 'Arial 14', width= 167,bg='yellow',
+Button(master, text= 'click on me', fg= 'black', font= 'Arial 14', width= 211,bg='yellow',
        image = photo, compound = LEFT, command=lambda : masbox()).pack(side = TOP)
-Button(master, text='XAXAXO', width= 15, bg='red', fg='white',font='Arial 14',
+Button(master, text='XAXAXO', width= 19, bg='red', fg='white',font='Arial 14',
        command=lambda: masbox()).pack(side = TOP, pady = 10)
 
 mainloop()
