@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body style="background-color:rgb(200,200,200)">
+
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">WEATHER FORECAST</h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="#">Features</a>
+      <a class="p-2 text-dark" href="#">Enterprise</a>
+      <a class="p-2 text-dark" href="#">Support</a>
+      <a class="p-2 text-dark" href="#">Pricing</a>
+    </nav>
+    <a class="btn btn-outline-primary" href="#">Sign up</a>
+  </div>
+  <div class="container mt-5">
+      <div class="row">
+      <div class="col-5 ">
+          <h1>Choose you city</h1>
+          <form action="" method="post">
+              {% csrf_token %}
+              <label for="city"></label>
+              {{ form.name }}
+              <input type="submit"  name="send" value="Add" class="mt-btn btn-danger">
+          </form>
+      </div>
+      <div class="col-3 offset-2">
+        <h1>Information</h1>
+
+        {% for info in all_info %}
+         <div class="alter.alter-info">
+           <div class="row">
+             <div class="col-6">
+              <b>City:</b>{{info.city}}<br>
+              <b>Temperature:</b>{{info.temp}}<sup>o</sup><br>
+             </div>
+             <div class="col-2 offset-1">
+               <img src="http://openweathermap.org/img/w/{{info.icon}}.png">
+             </div>
+           </div>
+         </div>
+        {% endfor %}
+
+      </div>
+  </div>
+
+</body>
+</html>
